@@ -1,0 +1,89 @@
+.services {
+    padding: 30px 0 60px;
+    line-height: normal;
+  
+    @include viewport-md {
+      padding-top: 60px;
+    }
+  
+    &__container {
+      padding: 30px 0 0;
+      display: grid;
+      gap: 30px;
+  
+      @include viewport-md {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 0 0;
+        gap: 30px;
+      }
+      @include viewport-lg {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  
+    &-link {
+      @include base-link;
+      display: inline-block;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding-right: 8px;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5.3px;
+        right: 0;
+        width: 7px;
+        height: 7px;
+        border-bottom: 2px solid $regular-color;
+        border-right: 2px solid $regular-color;
+        transform: rotate(-45deg);
+        transition: .2s;
+      }
+  
+      &:hover::after {
+        border-color: $accent-color;
+      }
+  
+    }
+  
+    &-title {
+      padding: 10px 0 0;
+      @include subtitle;
+      @include main-gradient-text;
+    }
+  
+    &__item-icon {
+      border-radius: $radius-lg;
+      background: $basic-white;
+      width: 92px;
+      height: 92px;
+      position: relative;
+    }
+  
+    &__item-icon-svg {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    &__item-subtitle {
+      color: $regular-color;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 30px 0 0;
+    }
+  
+    &__item-description {
+      color: $basic-white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      padding: 15px 0 0;
+    }
+  }
